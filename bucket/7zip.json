@@ -1,0 +1,43 @@
+{
+    "version": "26.00",
+    "description": "A multi-format file archiver with high compression ratios",
+    "homepage": "https://www.7-zip.org/",
+    "license": "LGPL-2.1-or-later",
+    "notes": [
+        "Add 7-Zip as a context menu option by running:",
+        "reg import \"$dir\\install-context.reg\""
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://status-im-scoop-bucket.ams3.digitaloceanspaces.com/7zip/7z2600-x64.msi",
+            "hash": "c388d0444871ca11b21237001af158cfddad7e137851795e5b65cee69b518495",
+            "extract_dir": "Files\\7-Zip"
+        }
+    },
+    "post_install": [
+        "$7zip_root = \"$dir\".Replace('\\', '\\\\')",
+        "'install-context.reg', 'uninstall-context.reg' | ForEach-Object {",
+        "    $content = Get-Content \"$bucketsdir\\main\\scripts\\7-zip\\$_\"",
+        "    $content = $content.Replace('$7zip_root', $7zip_root)",
+        "    if ($global) {",
+        "       $content = $content.Replace('HKEY_CURRENT_USER', 'HKEY_LOCAL_MACHINE')",
+        "    }",
+        "    Set-Content \"$dir\\$_\" $content -Encoding Ascii",
+        "}"
+    ],
+    "bin": [
+        "7z.exe",
+        "7zFM.exe",
+        "7zG.exe"
+    ],
+    "shortcuts": [
+        [
+            "7zFM.exe",
+            "7-Zip"
+        ]
+    ],
+    "persist": [
+        "Codecs",
+        "Formats"
+    ]
+}

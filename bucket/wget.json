@@ -1,0 +1,15 @@
+{
+    "version": "1.21.4",
+    "description": "A command-line utility for retrieving files using HTTP, HTTPS, FTP, and FTPS protocols.",
+    "homepage": "https://eternallybored.org/misc/wget/",
+    "license": "GPL-3.0-or-later",
+    "depends": "cacert",
+    "architecture": {
+        "64bit": {
+            "url": "https://status-im-scoop-bucket.ams3.digitaloceanspaces.com/wget/wget-1.21.4-win64.zip",
+            "hash": "7b0addf04edd370307aa6005f0c08a171a319cccd4403663daca5478860b3056"
+        }
+    },
+    "post_install": "\"ca_certificate=$(appdir cacert $global)\\current\\cacert.pem\" | out-file \"$dir\\wget.ini\" -encoding default",
+    "bin": "wget.exe"
+}

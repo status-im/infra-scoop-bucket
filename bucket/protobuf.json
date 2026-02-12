@@ -1,0 +1,13 @@
+{
+    "version": "3.20.1",
+    "description": "Protocol compiler used to compile .proto files.",
+    "homepage": "https://github.com/google/protobuf",
+    "license": "BSD-3-Clause",
+    "architecture": {
+        "64bit": {
+            "url": "https://status-im-scoop-bucket.ams3.digitaloceanspaces.com/protobuf/protoc-3.20.1-win64.zip",
+            "hash": "897bf86b9c989f91c4171c7f99e3886fedfceb077a94dd150f1401cfe922cd46"
+        }
+    },
+    "bin": "bin\\protoc.exe"
+}

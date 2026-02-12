@@ -1,0 +1,15 @@
+{
+    "version": "15.2.0-13.0.0-r5",
+    "description": "GNU Compiler Collection (WinLibs build)",
+    "homepage": "https://winlibs.com",
+    "license": "GPL-3.0-or-later,ZPL-2.1,BSD-2-Clause,...",
+    "architecture": {
+        "64bit": {
+            "url": "https://status-im-scoop-bucket.ams3.digitaloceanspaces.com/mingw-winlibs/winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64ucrt-13.0.0-r5.7z",
+            "hash": "6b567e3c158a00c81ceb85298487c905ced3288fb5fb17636e2471cf8134927a",
+            "extract_dir": "mingw64"
+        }
+    },
+    "post_install": "Copy-Item \"$dir\\bin\\mingw32-make.exe\" \"$dir\\bin\\make.exe\"",
+    "env_add_path": "bin"
+}

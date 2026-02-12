@@ -1,0 +1,24 @@
+{
+    "version": "14.44.35211.0",
+    "description": "Microsoft Visual C++ Redistributable for Visual Studio 2015-2022",
+    "homepage": "https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx"
+    },
+    "notes": "You can now remove this installer with 'scoop uninstall vcredist2022'",
+    "url": [
+        "https://status-im-scoop-bucket.ams3.digitaloceanspaces.com/vcredist2022/VC_redist.x64.exe"
+    ],
+    "hash": [
+        "cc0ff0eb1dc3f5188ae6300faef32bf5beeba4bdd6e8e445a9184072096b713b"
+    ],
+    "post_install": [
+        "# For error codes, see https://docs.microsoft.com/en-us/windows/win32/msi/error-codes",
+        "$ec = @{",
+        "    1638 = 'This product is already installed';",
+        "    3010 = 'A restart is required to complete the installation';",
+        "}",
+        "Invoke-ExternalCommand -FilePath \"$dir\\vc_redist.x64.exe\" -ArgumentList '/fo', '/quiet', '/norestart' -ContinueExitCodes $ec -RunAs | Out-Null"
+    ]
+}

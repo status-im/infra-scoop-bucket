@@ -1,0 +1,20 @@
+{
+    "version": "3.0.19",
+    "description": "TLS/SSL toolkit (3.0.X LTS)",
+    "homepage": "https://slproweb.com/products/Win32OpenSSL.html",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://status-im-scoop-bucket.ams3.digitaloceanspaces.com/openssl-tls/Win64OpenSSL-3_0_19.exe",
+            "hash": "953a85bfc0479a6769a1153b3b4916d10d375e06a12a503ad055e0a5708585fa"
+        }
+    },
+    "innosetup": true,
+    "env_add_path": "bin",
+    "env_set": {
+        "OPENSSL_CONF": "$dir\\bin\\cnf\\openssl.cnf",
+        "OPENSSL_LIB_DIR": "$dir\\lib",
+        "OPENSSL_INCLUDE_DIR": "$dir\\include",
+        "OPENSSL_MODULES": "$dir\\bin"
+    }
+}

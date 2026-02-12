@@ -1,0 +1,18 @@
+{
+    "version": "7.5.4",
+    "description": "Convert text files with DOS or Mac line endings to Unix line endings and vice versa",
+    "homepage": "https://waterlan.home.xs4all.nl/dos2unix.html",
+    "license": "BSD-2-Clause",
+    "architecture": {
+        "64bit": {
+            "url": "https://status-im-scoop-bucket.ams3.digitaloceanspaces.com/dos2unix/dos2unix-7.5.4-win64.zip",
+            "hash": "a64f748630827a6a09390edecb404b505d364864d095a758e434eb95ee6fd197"
+        }
+    },
+    "bin": [
+        "bin\\dos2unix.exe",
+        "bin\\mac2unix.exe",
+        "bin\\unix2dos.exe",
+        "bin\\unix2mac.exe"
+    ]
+}
